@@ -39,6 +39,12 @@ buttonOut.addEventListener('click', () => {
 logInForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
+    if (!inputLogin.value) {
+        inputLogin.style.borderColor = 'red';
+        inputLogin.placeholder = 'Введите имя';
+        return false;
+    } 
+
     const user = {
         login: inputLogin.value,
         password: inputPassword.value
